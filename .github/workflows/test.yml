@@ -12,7 +12,7 @@ jobs:
       - name: Cleanup
         run: sed -i "s/%NAME%/test/g" build.sc
       - name: Verilator
-        run: apt install -y verilator
+        run: sudo apt install -y verilator
       - name: Setup Scala
         uses: olafurpg/setup-scala@v10
         with:
