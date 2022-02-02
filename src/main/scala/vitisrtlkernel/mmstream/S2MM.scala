@@ -71,7 +71,7 @@ class S2MM(val ADDR_WIDTH: Int, val DATA_WIDTH: Int) extends Module with DebugLo
       when(io.req.valid){
         eot_reg := false.B
         issuedLen_reg := 0.U
-        addr_reg := io.req.bits.addr
+        addr_reg := Cat(io.req.bits.addr >> addrAlignBits, 0.U(addrAlignBits.W))
         state_reg := sAddrCompute
       }
     }
