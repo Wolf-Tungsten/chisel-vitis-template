@@ -2,9 +2,6 @@ package vitisrtlkernel.mmstream
 
 import chisel3._
 import chisel3.util._
-
-import chisel3._
-import chisel3.util._
 import vitisrtlkernel.util.DebugLog
 import vitisrtlkernel.interface.VitisAXIReadMaster
 
