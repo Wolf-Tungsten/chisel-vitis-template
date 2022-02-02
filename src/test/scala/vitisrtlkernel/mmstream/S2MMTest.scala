@@ -11,7 +11,7 @@ import chiseltest.simulator.{VcsBackendAnnotation, VcsFlags, WriteFsdbAnnotation
 import vitisrtlkernel.interface.VitisAXIWriteMaster
 import chisel3.util.DecoupledIO
 
-class SS2MTest extends AnyFreeSpec with ChiselScalatestTester {
+class S2MMTest extends AnyFreeSpec with ChiselScalatestTester {
 
   class AXIWriteSlaveSim(
     val mem:         MemSim,
@@ -61,7 +61,7 @@ class SS2MTest extends AnyFreeSpec with ChiselScalatestTester {
             while (!w.valid.peek().litToBoolean) {
               clock.step(1)
             }
-            mem.write(addr + burstNr * writeMaster.dataWidth / 8, w.bits.data.peek().litValue)
+            mem.write(addr + burstNr * writeMaster.dataWidth / 8, w.bits.data.peek().litValue, writeMaster.dataWidth / 8)
             if (burstNr == len - 1) {
               w.bits.last.expect(true.B)
             }
@@ -90,21 +90,15 @@ class SS2MTest extends AnyFreeSpec with ChiselScalatestTester {
 
   }
 
-  class StreamSlaveSim(
-    val master: DecoupledIO[Bundle { val data: UInt; val last: Bool }],
-    val clock:  Clock,
-    val gap:    Boolean = false,
-    val log:    Boolean = true) {
-    private var last    = false
-    private val dataBuf = ArrayBuffer.empty[BigInt]
-
-    def isLast(): Boolean = {
-      return last
-    }
-
-    def getDataBuf(): ArrayBuffer[BigInt] = {
-      return dataBuf
-    }
+  class StreamMasterSim(
+    val mem:       MemSim,
+    val slave:     DecoupledIO[Bundle { val data: UInt; val last: Bool }],
+    val clock:     Clock,
+    val dataWidth: Int,
+    val startAddr: Int,
+    val writeLen:  Int,
+    val gap:       Boolean = false,
+    val log:       Boolean = true) {
 
     private val rand = new Random()
 
@@ -114,31 +108,26 @@ class SS2MTest extends AnyFreeSpec with ChiselScalatestTester {
       }
     }
 
-    def reset() = {
-      last = false
-      dataBuf.clear()
-    }
-
     def serve() = {
-      while (!last) {
+      println(writeLen)
+      for (burstNr <- 0 until writeLen) {
         timescope {
           insertGap()
-          master.ready.poke(true.B)
-          while (!master.valid.peek().litToBoolean) {
+          slave.valid.poke(true.B)
+          slave.bits.last.poke((burstNr == writeLen - 1).B)
+          slave.bits.data.poke(mem.read(startAddr + burstNr * dataWidth / 8, dataWidth / 8).U)
+          while (!slave.ready.peek().litToBoolean) {
             clock.step(1)
           }
-          dataBuf.append(master.bits.data.peek().litValue)
-          last = master.bits.last.peek().litToBoolean
           clock.step(1)
         }
       }
     }
   }
 
-  def issueRequest(dut: MM2S, addr: Int, len: Int) = {
+  def issueRequest(dut: S2MM, startAddr: Int, writeLen: Int) = {
     timescope {
-      dut.io.req.bits.addr.poke(addr.U)
-      dut.io.req.bits.len.poke(len.U)
+      dut.io.req.bits.addr.poke(startAddr.U)
       dut.io.req.valid.poke(true.B)
       while (!dut.io.req.ready.peek().litToBoolean) {
         dut.clock.step(1)
@@ -147,48 +136,40 @@ class SS2MTest extends AnyFreeSpec with ChiselScalatestTester {
     }
   }
 
-  def singleTranscation(dut: MM2S, _addr: Int, _lenBytes: Int) = {
-    var addr     = _addr
-    var lenBytes = _lenBytes
-    addr     = addr - addr % (dut.DATA_WIDTH / 8)
-    lenBytes = lenBytes + ((dut.DATA_WIDTH / 8) - (lenBytes % (dut.DATA_WIDTH / 8)))
-    val len = lenBytes / (dut.DATA_WIDTH / 8)
-    println(len)
-    val mem = new MemSim(8 * 1024 * 1024)
-    mem.modInit(47)
-    val axiReadSlave   = new AXIReadSlaveSim(mem, dut.io.axiRead, dut.clock, true, false)
-    val axiStreamSlave = new StreamSlaveSim(dut.io.streamOut, dut.clock, true, false)
+  def singleTranscation(dut: S2MM, startAddr: Int, writeLen: Int) = {
+    val inMem  = new MemSim(8 * 1024 * 1024)
+    val outMem = new MemSim(8 * 1024 * 1024)
+    inMem.modInit(47)
+    outMem.randomInit()
+    val streamMasterSim =
+      new StreamMasterSim(inMem, dut.io.streamIn, dut.clock, dut.DATA_WIDTH, startAddr, writeLen, true, true)
+    val axiWriteSlaveSim = new AXIWriteSlaveSim(outMem, dut.io.axiWrite, dut.clock, startAddr, writeLen, true, true)
     // issueRequest
-    issueRequest(dut, addr, len)
+    issueRequest(dut, startAddr, writeLen)
     // serve AXIRead and AXIStream
     fork {
-      axiReadSlave.serve()
+      streamMasterSim.serve()
     }.fork {
-      axiStreamSlave.serve()
-    }.fork {
-      while (!axiStreamSlave.isLast()) {
-        dut.clock.step(1)
-      }
-      axiReadSlave.terminate()
+      axiWriteSlaveSim.serve()
     }.join()
     // check result
-    for (i <- 0 until len) {
-      val memResult  = mem.read(addr + i * dut.DATA_WIDTH / 8, dut.DATA_WIDTH / 8)
-      val axisResult = axiStreamSlave.getDataBuf()(i)
+    for (i <- 0 until writeLen) {
+      val exp = inMem.read(startAddr + i * dut.DATA_WIDTH / 8, dut.DATA_WIDTH / 8)
+      val act = outMem.read(startAddr + i * dut.DATA_WIDTH / 8, dut.DATA_WIDTH / 8)
       print(s">>>>>>> ${i} <<<<<<<<\n")
-      PrintInt.printBigIntLSB(memResult)
-      PrintInt.printBigIntLSB(axisResult)
-      assert(memResult == axisResult)
+      PrintInt.printBigIntLSB(exp)
+      PrintInt.printBigIntLSB(act)
+      assert(exp == act)
     }
   }
 
   //WriteFsdbAnnotation
   "Multiple Transaction" in {
-    test(new MM2S(64, 512))
+    test(new S2MM(64, 512))
       .withAnnotations(Seq(VerilatorBackendAnnotation, WriteVcdAnnotation)) { dut =>
         val rand = new Random
         for (i <- 0 until 10) {
-          singleTranscation(dut, 64 * rand.nextInt(100), 64 * rand.nextInt(1024))
+          singleTranscation(dut, 64 * rand.nextInt(100), rand.nextInt(1024))
         }
       }
   }

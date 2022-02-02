@@ -45,7 +45,7 @@ class S2MM(val ADDR_WIDTH: Int, val DATA_WIDTH: Int) extends Module with DebugLo
   io.req.ready := false.B
 
   io.axiWrite.aw.valid     := false.B
-  io.axiWrite.aw.bits.addr := addr_reg + issuedLen_reg
+  io.axiWrite.aw.bits.addr := addr_reg + (issuedLen_reg << addrAlignBits)
   io.axiWrite.aw.bits.len  := 0.U
 
   io.axiWrite.w.valid     := false.B
@@ -54,6 +54,9 @@ class S2MM(val ADDR_WIDTH: Int, val DATA_WIDTH: Int) extends Module with DebugLo
   io.axiWrite.w.bits.strb := Fill(io.axiWrite.w.bits.strb.getWidth, 1.U)
 
   io.axiWrite.b.ready := false.B
+
+  buffer_module.io.enq.bits := io.streamIn.bits.data
+  buffer_module.io.deq.ready := false.B
 
   // enqueue flow control
   val freezeBuffer_wire =
@@ -124,7 +127,7 @@ class S2MM(val ADDR_WIDTH: Int, val DATA_WIDTH: Int) extends Module with DebugLo
     is(sWaitBuffer){
       when(buffer_module.io.count >= BURST_LEN.U){
         state_reg := sAddr
-      }.elsewhen(eot_reg && buffer_module.io.count > 0.U){
+      }.elsewhen(eot_reg){
         when(buffer_module.io.count > 0.U){
           state_reg := sAddr
         }.otherwise {
