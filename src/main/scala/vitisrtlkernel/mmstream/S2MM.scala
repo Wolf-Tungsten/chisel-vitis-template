@@ -121,7 +121,46 @@ class S2MM(val ADDR_WIDTH: Int, val DATA_WIDTH: Int) extends Module with DebugLo
       }
     }
 
+    is(sWaitBuffer){
+      when(buffer_module.io.count >= BURST_LEN.U){
+        state_reg := sAddr
+      }.elsewhen(eot_reg && buffer_module.io.count > 0.U){
+        when(buffer_module.io.count > 0.U){
+          state_reg := sAddr
+        }.otherwise {
+          state_reg := sIdle
+        }
+      }
+    }
 
+    is(sAddr){
+      io.axiWrite.aw.valid := true.B
+      val burstLen_wire = Mux(buffer_module.io.count >= BURST_LEN.U, BURST_LEN.U, buffer_module.io.count)
+      io.axiWrite.aw.bits.len := burstLen_wire - 1.U
+      burstLen_reg := burstLen_wire
+      when(io.axiWrite.aw.ready){
+        state_reg := sData
+        issuedLen_reg := issuedLen_reg + burstLen_wire
+      }
+    }
+    
+    is(sData){
+      io.axiWrite.w.valid := buffer_module.io.deq.valid
+      buffer_module.io.deq.ready := io.axiWrite.w.ready
+      when(buffer_module.io.deq.fire){
+        burstLen_reg := burstLen_reg - 1.U
+        when(burstLast_wire){
+          state_reg := sResp
+        }
+      }
+    }
+
+    is(sResp){
+      io.axiWrite.b.ready := true.B
+      when(io.axiWrite.b.valid){
+        state_reg := sWaitBuffer
+      }
+    }
   }
 
 }
