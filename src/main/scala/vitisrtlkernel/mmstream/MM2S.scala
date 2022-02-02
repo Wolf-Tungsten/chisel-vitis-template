@@ -186,8 +186,8 @@ class MM2S(val ADDR_WIDTH: Int, val DATA_WIDTH: Int) extends Module with DebugLo
     io.streamOut.valid         := buffer_module.io.deq.valid
     buffer_module.io.deq.ready := io.streamOut.ready
     io.streamOut.bits.data     := buffer_module.io.deq.bits
+    io.streamOut.bits.last := (issuedLen_reg === len_reg - 1.U)
     when(buffer_module.io.deq.valid) {
-      io.streamOut.bits.last := (issuedLen_reg === len_reg - 1.U)
       when(io.streamOut.ready) {
         issuedLen_reg := issuedLen_reg + 1.U
       }
