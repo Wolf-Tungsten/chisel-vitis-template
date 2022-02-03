@@ -22,6 +22,7 @@ class MM2S(val ADDR_WIDTH: Int, val DATA_WIDTH: Int) extends Module with DebugLo
       val data = UInt(DATA_WIDTH.W)
       val last = Bool()
     })
+    val busy = Output(Bool())
   })
 
   val addr_reg      = Reg(UInt(ADDR_WIDTH.W))
@@ -190,5 +191,7 @@ class MM2S(val ADDR_WIDTH: Int, val DATA_WIDTH: Int) extends Module with DebugLo
       }
     }
   }
+
+  io.busy := state_reg =/= sIdle
 
 }

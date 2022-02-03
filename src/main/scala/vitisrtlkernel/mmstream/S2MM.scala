@@ -21,6 +21,7 @@ class S2MM(val ADDR_WIDTH: Int, val DATA_WIDTH: Int) extends Module with DebugLo
       val data = UInt(DATA_WIDTH.W)
       val last = Bool()
     }))
+    val busy = Output(Bool())
   })
 
   val addr_reg      = Reg(UInt(ADDR_WIDTH.W))
@@ -41,6 +42,8 @@ class S2MM(val ADDR_WIDTH: Int, val DATA_WIDTH: Int) extends Module with DebugLo
     Enum(10)
   val state_reg = RegInit(sIdle)
 
+  io.busy := state_reg =/= sIdle
+  
   // 各个接口的初始状态
   io.req.ready := false.B
 
