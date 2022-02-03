@@ -61,7 +61,7 @@ class AXIReadSlaveSim(
           }
           clock.step(1)
           if (log) {
-            println(s"[AXIReadSlave] serve addr=${addr}")
+            println(s"[AXIReadSlave] read addr=${addr}")
           }
           addr = addr + readMaster.dataWidth / 8
           len -= 1
@@ -111,6 +111,9 @@ class AXIWriteSlaveSim(
         }
         addr = aw.bits.addr.peek().litValue.intValue
         len  = aw.bits.len.peek().litValue.intValue + 1
+        if (log) {
+          println(s"[AXIWriteSlave] request addr=${addr} len=${len}")
+        }
         clock.step(1)
       }
 
@@ -121,6 +124,9 @@ class AXIWriteSlaveSim(
           w.ready.poke(true.B)
           while (!isDone && !w.valid.peek().litToBoolean) {
             clock.step(1)
+          }
+          if (log) {
+            println(s"[AXIWriteSlave] write addr=${addr + burstNr * writeMaster.dataWidth / 8}")
           }
           mem.write(addr + burstNr * writeMaster.dataWidth / 8, w.bits.data.peek().litValue, writeMaster.dataWidth / 8)
           if (burstNr == len - 1) {

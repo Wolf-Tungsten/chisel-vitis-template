@@ -8,7 +8,7 @@ class MemSim(val length: Int) {
   def read(addr: Int, nBytes: Int): BigInt = {
     var res = BigInt(0)
     for (i <- 0 until nBytes) {
-      res += (BigInt(mem((addr + i) % length)) << (i * 8))
+      res += (BigInt(mem((addr + i) % length) & 0x0ff) << (i * 8))
     }
     res
   }

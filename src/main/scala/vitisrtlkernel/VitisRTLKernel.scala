@@ -12,8 +12,8 @@ class VitisRTLKernelDataIF extends Bundle {
   val writeAddress = Input(UInt(64.W))
 
   // HBM/DDR ports
-  val m00Read  = new VitisAXIReadMaster(64, 64)
-  val m00Write = new VitisAXIWriteMaster(64, 64)
+  val m00Read  = new VitisAXIReadMaster(64, 512)
+  val m00Write = new VitisAXIWriteMaster(64, 512)
 }
 
 class VitisRTLKernel extends RawModule {
@@ -25,8 +25,11 @@ class VitisRTLKernel extends RawModule {
 
   val dataIF = IO(new VitisRTLKernelDataIF)
 
+  ap_idle := false.B
+  ap_done := false.B
+  ap_ready := false.B
+
   val reset_w = Wire(Bool())
-  val start_w = Wire(Bool())
 
   reset_w := false.B
 
@@ -42,6 +45,7 @@ class VitisRTLKernel extends RawModule {
   switch(state_r) {
     is(sIdle) {
       ap_idle := true.B
+      reset_w := true.B
       when(ap_start) {
         state_r := sReset1
       }

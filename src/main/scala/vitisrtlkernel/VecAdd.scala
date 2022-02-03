@@ -13,8 +13,8 @@ class VecAdd extends Module {
   val readReqIssued_reg  = RegInit(false.B)
   val writeReqIssued_reg = RegInit(false.B)
 
-  val mm2s_module = Module(new MM2S(64, 64))
-  val s2mm_module = Module(new S2MM(64, 64))
+  val mm2s_module = Module(new MM2S(64, 512))
+  val s2mm_module = Module(new S2MM(64, 512))
 
   mm2s_module.io.axiRead <> io.dataIF.m00Read
   s2mm_module.io.axiWrite <> io.dataIF.m00Write
