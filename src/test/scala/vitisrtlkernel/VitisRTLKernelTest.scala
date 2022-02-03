@@ -45,7 +45,7 @@ class VitisRTLKernelTest extends AnyFreeSpec with ChiselScalatestTester {
         val writeMem      = new MemSim(16 * 1024 * 1024)
         val readAddress   = 64 * rand.nextInt(1024)
         val writeAddress  = 64 * rand.nextInt(1024)
-        val readLength    = 1 + rand.nextInt(1024)
+        val readLength    = rand.nextInt(1024)
         val axiReadSlave  = new AXIReadSlaveSim(readMem, dut.io.dataIF.m00Read, dut.clock, dut.io.done, true, true)
         val axiWriteSlave = new AXIWriteSlaveSim(writeMem, dut.io.dataIF.m00Write, dut.clock, dut.io.done, true, true)
         fork {

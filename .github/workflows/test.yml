@@ -24,4 +24,4 @@ jobs:
       - name: Cache Scala
         uses: coursier/cache-action@v5
       - name: mill Test
-        run: mill -i __.test.testOnly vitisrtlkernel.VitisRTLKernelTest
+        run: mill -i _.test.testOnly vitisrtlkernel.VitisRTLKernelTest
