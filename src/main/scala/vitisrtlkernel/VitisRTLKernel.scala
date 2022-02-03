@@ -70,3 +70,11 @@ class VitisRTLKernel extends RawModule {
     }
   }
 }
+
+object VitisRTLKernelVerilog extends App {
+  val verilogString =
+    (new chisel3.stage.ChiselStage).emitVerilog(
+      new VitisRTLKernel,
+      args
+    )
+}
