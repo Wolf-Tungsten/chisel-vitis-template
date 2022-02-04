@@ -65,8 +65,8 @@ class VitisRTLKernelTest extends AnyFreeSpec with ChiselScalatestTester {
           axiWriteSlave.serve()
         }.join()
         // 检查正确性
-        for (i <- 0 until readLength / 2 * 64) {
-          assert((readMem.read(readAddress + i * 2, 2) + 47) % 65536 == writeMem.read(writeAddress + i * 2, 2))
+        for (i <- 0 until readLength / 4 * 64) {
+          assert((readMem.read(readAddress + i * 4, 4) + 47) % BigInt("ffffffff", 16) == writeMem.read(writeAddress + i * 4, 4))
         }
       }
   }

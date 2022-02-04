@@ -35,8 +35,8 @@ class VecAdd extends Module {
 
   s2mm_module.io.streamIn.valid := mm2s_module.io.streamOut.valid
   mm2s_module.io.streamOut.ready := s2mm_module.io.streamIn.ready
-  val inputData_wire = Wire(Vec(32, UInt(16.W)))
-  val outputData_wire = Wire(Vec(32, UInt(16.W)))
+  val inputData_wire = Wire(Vec(16, UInt(32.W)))
+  val outputData_wire = Wire(Vec(16, UInt(32.W)))
   inputData_wire := mm2s_module.io.streamOut.bits.data.asTypeOf(inputData_wire)
   outputData_wire.zip(inputData_wire).foreach( p => {
       p._1 := p._2 + 47.U
