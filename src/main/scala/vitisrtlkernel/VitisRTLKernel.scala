@@ -30,16 +30,19 @@ class VitisRTLKernel extends RawModule {
   ap_ready := false.B
 
   val reset_w = Wire(Bool())
+  val reset_asyncReset = Wire(new AsyncReset)
+
+  reset_asyncReset := reset_w.asAsyncReset
 
   reset_w := false.B
 
-  val exampleDesign = withClockAndReset(ap_clk, reset_w)(Module(new VecAdd))
+  val exampleDesign = withClockAndReset(ap_clk, reset_asyncReset)(Module(new VecAdd))
 
   dataIF <> exampleDesign.io.dataIF
 
   val sIdle :: sReset1 :: sReset2 :: sBusy :: sDone :: Nil = Enum(5)
 
-  val state_r = withClockAndReset(ap_clk, !ap_start)(RegInit(sIdle))
+  val state_r = withClockAndReset(ap_clk, (!ap_start).asAsyncReset)(RegInit(sIdle))
 
 
   switch(state_r) {
