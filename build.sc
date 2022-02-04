@@ -6,8 +6,16 @@ import mill.scalalib.TestModule.ScalaTest
 import scalalib._
 // support BSP
 import mill.bsp._
+import coursier.maven.MavenRepository
+
+object CustomZincWorkerModule extends ZincWorkerModule with CoursierModule {
+  def repositoriesTask() = T.task { super.repositoriesTask() ++ Seq(
+    MavenRepository("https://maven.aliyun.com/repository/public")
+  ) }
+}
 
 object chiselVitisTemplate extends SbtModule { m =>
+  def zincWorker = CustomZincWorkerModule
   override def millSourcePath = os.pwd
   override def scalaVersion = "2.12.13"
   override def scalacOptions = Seq(
