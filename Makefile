@@ -37,22 +37,20 @@ XCLBIN_LOG_DIR = $(XCLBIN_BUILD_DIR)/log
 XCLBIN_REPORT_DIR = $(XCLBIN_BUILD_DIR)/report
 
 VPP = v++
-VITIS_PLATFORM = xilinx_u280_xdma_201920_3 # can be queried by 'plaforminfo -l'
-XO = ./vivado_exports/rtl_kernel_wizard_0.xo
-XCLBIN_LINK_CFG = ./vivado_exports/xclbin_link.cfg
+KERNEL_XO = $(XO).xo
+LINK_CFG = $(XO).cfg
 
 
-xclbin: $(XO) $(XCLBIN_LINK_CFG)
-	mkdir -p $(XCLBIN_BUILD_DIR)
+xclbin: $(KERNEL_XO) $(LINK_CFG)
 	$(VPP) -t hw --platform $(VITIS_PLATFORM)\
 	--temp_dir $(XCLBIN_TEMP_DIR) --log_dir $(XCLBIN_LOG_DIR) --report_dir $(XCLBIN_REPORT_DIR) \
-	--link $(XO) \
-	--config $(XCLBIN_LINK_CFG) -o $(XCLBIN_BUILD_DIR)/kernel.xclbin
+	--link $(KERNEL_XO) \
+	--config $(LINK_CFG) -o $(XO).xclbin
 
 clean_vpp :
 	-rm -rf $(XCLBIN_TEMP_DIR)
 	-rm -rf $(XCLBIN_LOG_DIR)
 	-rm -rf $(XCLBIN_REPORT_DIR)
 	-rm -rf ./.ipcaches
-	
+
 .PHONY: xclbin clean_vpp

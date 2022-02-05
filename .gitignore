@@ -344,3 +344,5 @@ hs_err_pid*
 /.vscode/
 /.ipcache/
 /build/
+vitis_pid*.str
+*.jou
