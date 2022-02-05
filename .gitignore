@@ -345,4 +345,5 @@ hs_err_pid*
 /.ipcache/
 /build/
 vitis_pid*.str
+*pid*.str
 *.jou

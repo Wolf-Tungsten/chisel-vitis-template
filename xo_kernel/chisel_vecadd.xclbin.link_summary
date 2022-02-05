@@ -144,3 +144,1043 @@
  }
 }
 </ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 21:45:19 2022",
+ "timestampMillis": "1644068719878",
+ "status": {
+  "cmdId": "33647b71-4506-4637-bcfd-63698ae912e5",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Feb  5 21:45:19 2022",
+ "timestampMillis": "1644068719880",
+ "buildStep": {
+  "cmdId": "c6e026aa-d506-4495-a7e1-8abc8666f5c3",
+  "name": "cf2sw",
+  "logFile": "",
+  "commandLine": "cf2sw -sdsl /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/sdsl.dat -rtd /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/cf2sw.rtd -nofilter /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/cf2sw_full.rtd -xclbin /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/xclbin_orig.xml -o /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/xclbin_orig.1.xml",
+  "args": [
+   "-sdsl",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/sdsl.dat",
+   "-rtd",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/cf2sw.rtd",
+   "-nofilter",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/cf2sw_full.rtd",
+   "-xclbin",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/xclbin_orig.xml",
+   "-o",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/xclbin_orig.1.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/nvme0n1/gaoruihao/Project/chisel-vitis-template"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 21:45:19 2022",
+ "timestampMillis": "1644068719881",
+ "status": {
+  "cmdId": "c6e026aa-d506-4495-a7e1-8abc8666f5c3",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 21:45:24 2022",
+ "timestampMillis": "1644068724690",
+ "status": {
+  "cmdId": "c6e026aa-d506-4495-a7e1-8abc8666f5c3",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Feb  5 21:45:24 2022",
+ "timestampMillis": "1644068724692",
+ "buildStep": {
+  "cmdId": "72c7d346-99fc-4845-9e48-6047a1a8c773",
+  "name": "rtd2_system_diagram",
+  "logFile": "",
+  "commandLine": "rtd2SystemDiagram",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/nvme0n1/gaoruihao/Project/chisel-vitis-template"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 21:45:24 2022",
+ "timestampMillis": "1644068724692",
+ "status": {
+  "cmdId": "72c7d346-99fc-4845-9e48-6047a1a8c773",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 21:45:25 2022",
+ "timestampMillis": "1644068725343",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/systemDiagramModel.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 21:45:25 2022",
+ "timestampMillis": "1644068725344",
+ "status": {
+  "cmdId": "72c7d346-99fc-4845-9e48-6047a1a8c773",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Feb  5 21:45:25 2022",
+ "timestampMillis": "1644068725345",
+ "buildStep": {
+  "cmdId": "8e7d71b5-24f6-4fa4-89cb-2a0f4cdd9ec5",
+  "name": "vpl",
+  "logFile": "",
+  "commandLine": "vpl -t hw -f xilinx_u280_xdma_201920_3 --remote_ip_cache /nvme0n1/gaoruihao/Project/chisel-vitis-template/.ipcache --output_dir /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int --log_dir /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/log/link --report_dir /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/report/link --config /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/vplConfig.ini -k /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link --no-info --iprepo /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/xo/ip_repo/wolf_tungsten_com_kernel_chisel_vecadd_1_0 --messageDb /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/run_link/vpl.pb /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/dr.bd.tcl",
+  "args": [
+   "-t",
+   "hw",
+   "-f",
+   "xilinx_u280_xdma_201920_3",
+   "--remote_ip_cache",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/.ipcache",
+   "--output_dir",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int",
+   "--log_dir",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/log/link",
+   "--report_dir",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/report/link",
+   "--config",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/vplConfig.ini",
+   "-k",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/kernel_info.dat",
+   "--webtalk_flag",
+   "Vitis",
+   "--temp_dir",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link",
+   "--no-info",
+   "--iprepo",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/xo/ip_repo/wolf_tungsten_com_kernel_chisel_vecadd_1_0",
+   "--messageDb",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/run_link/vpl.pb",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/dr.bd.tcl"
+  ],
+  "iniFiles": [
+   {
+    "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/vplConfig.ini",
+    "content": "[advanced]\nmisc=report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\nmisc=report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\nparam=compiler.enablePerformanceTrace=1\nparam=compiler.vppCurrentWorkingDir=/nvme0n1/gaoruihao/Project/chisel-vitis-template\nmisc=BinaryName=chisel_vecadd\n\n[connectivity]\nnk=chisel_vecadd:1:chisel_vecadd_0\n\n[vivado]\nprop=run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\n\n"
+   }
+  ],
+  "cwd": "/nvme0n1/gaoruihao/Project/chisel-vitis-template"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 21:45:25 2022",
+ "timestampMillis": "1644068725346",
+ "status": {
+  "cmdId": "8e7d71b5-24f6-4fa4-89cb-2a0f4cdd9ec5",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Sat Feb  5 21:45:27 2022",
+ "timestampMillis": "1644068727352",
+ "buildStep": {
+  "cmdId": "7df2ccf7-64a0-43b5-86a6-ca7a8661d3b4",
+  "name": "vpl",
+  "logFile": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/link.steps.log",
+  "commandLine": "/nvme0n1/tools/Xilinx/Vitis/2021.1/bin/unwrapped/lnx64.o/vpl -t hw -f xilinx_u280_xdma_201920_3 --remote_ip_cache /nvme0n1/gaoruihao/Project/chisel-vitis-template/.ipcache --output_dir /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int --log_dir /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/log/link --report_dir /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/report/link --config /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/vplConfig.ini -k /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link --no-info --iprepo /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/xo/ip_repo/wolf_tungsten_com_kernel_chisel_vecadd_1_0 --messageDb /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/run_link/vpl.pb /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/dr.bd.tcl ",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 21:45:27 2022",
+ "timestampMillis": "1644068727352",
+ "status": {
+  "cmdId": "7df2ccf7-64a0-43b5-86a6-ca7a8661d3b4",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_VivadoProject",
+ "dateTimestamp": "Sat Feb  5 21:45:43 2022",
+ "timestampMillis": "1644068743410",
+ "vivadoProject": {
+  "openDir": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/vivado/vpl",
+  "openScript": "openprj.tcl",
+  "relativeProject": "prj/prj.xpr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Feb  5 21:45:43 2022",
+ "timestampMillis": "1644068743412",
+ "buildStep": {
+  "cmdId": "b4ab575f-e403-4366-a4cf-1cb570ea577b",
+  "name": "vivado",
+  "logFile": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/vivado/vpl/vivado.log",
+  "commandLine": "vivado -log vivado.log -applog -m64 -messageDb vivado.pb -mode batch -source vpl.tcl -notrace",
+  "args": [
+   "-log",
+   "vivado.log",
+   "-applog",
+   " -m64",
+   "-messageDb",
+   "vivado.pb",
+   "-mode",
+   "batch",
+   "-source",
+   "vpl.tcl",
+   "-notrace"
+  ],
+  "iniFiles": [],
+  "cwd": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 21:45:43 2022",
+ "timestampMillis": "1644068743412",
+ "status": {
+  "cmdId": "b4ab575f-e403-4366-a4cf-1cb570ea577b",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 21:46:49 2022",
+ "timestampMillis": "1644068809004",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/debug_ip_layout.rtd",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "DEBUG_IP_LAYOUT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Sat Feb  5 21:53:16 2022",
+ "timestampMillis": "1644069196605",
+ "buildStep": {
+  "cmdId": "f032e919-e28a-4fe7-8f73-f40ed25b0556",
+  "name": "vivado.impl",
+  "logFile": "",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/vivado/vpl"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 21:53:16 2022",
+ "timestampMillis": "1644069196606",
+ "status": {
+  "cmdId": "f032e919-e28a-4fe7-8f73-f40ed25b0556",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Sat Feb  5 21:53:16 2022",
+ "timestampMillis": "1644069196606",
+ "buildStep": {
+  "cmdId": "7590ee51-7f97-44a4-abf2-54c52f4f6e5c",
+  "name": "vivado.impl.impl_1",
+  "logFile": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/vivado/vpl/prj/prj.runs/impl_1/runme.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/vivado/vpl/prj/prj.runs/impl_1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 21:53:16 2022",
+ "timestampMillis": "1644069196606",
+ "status": {
+  "cmdId": "7590ee51-7f97-44a4-abf2-54c52f4f6e5c",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 22:50:28 2022",
+ "timestampMillis": "1644072628864",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/vivado/vpl/prj/prj.runs/impl_1/system_diagram.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM_PLUS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 22:51:39 2022",
+ "timestampMillis": "1644072699113",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/kernel_service.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "KERNEL_SERVICE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 22:51:39 2022",
+ "timestampMillis": "1644072699114",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/kernel_service.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "KERNEL_SERVICE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527136",
+ "status": {
+  "cmdId": "b4ab575f-e403-4366-a4cf-1cb570ea577b",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527189",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/report/link/imp/impl_1_kernel_util_synthed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527189",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/report/link/imp/impl_1_kernel_util_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527190",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/report/link/imp/impl_1_slr_util_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SLR_UTIL_ROUTED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527190",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/report/link/imp/impl_1_slr_util_placed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_SLR_UTIL_PLACED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527191",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/report/link/imp/impl_1_kernel_util_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_PLACEMENT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527191",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/report/link/imp/impl_1_full_util_synthed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527191",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/report/link/imp/impl_1_slr_util_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SLR_UTIL_PLACED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527192",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/report/link/imp/impl_1_full_util_routed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_UTILIZATION_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527192",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/report/link/imp/impl_1_kernel_util_routed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527192",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/report/link/imp/impl_1_full_util_synthed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527193",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/report/link/imp/impl_1_kernel_util_synthed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527193",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/report/link/imp/impl_1_kernel_util_placed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_PLACEMENT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527194",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/report/link/imp/impl_1_full_util_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_UTILIZATION_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527194",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/report/link/imp/impl_1_slr_util_routed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_SLR_UTIL_ROUTED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527208",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/report/link/syn/pfm_dynamic_chisel_vecadd_0_0_synth_1_pfm_dynamic_chisel_vecadd_0_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527208",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/report/link/syn/pfm_dynamic_system_ila_0_0_synth_1_pfm_dynamic_system_ila_0_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527209",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/report/link/imp/impl_1_system_diagram.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM_PLUS",
+  "cmdId": "7590ee51-7f97-44a4-abf2-54c52f4f6e5c"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527221",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/report/link/imp/impl_1_xilinx_u280_xdma_201920_3_bb_locked_timing_summary_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "7590ee51-7f97-44a4-abf2-54c52f4f6e5c"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527233",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/report/link/imp/impl_1_xilinx_u280_xdma_201920_3_bb_locked_timing_summary_routed.rpx",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "7590ee51-7f97-44a4-abf2-54c52f4f6e5c"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527234",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/report/link/imp/impl_1_xilinx_u280_xdma_201920_3_bb_locked_timing_summary_routed.rpv",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY_CONCISE",
+  "cmdId": "7590ee51-7f97-44a4-abf2-54c52f4f6e5c"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527767",
+ "status": {
+  "cmdId": "7df2ccf7-64a0-43b5-86a6-ca7a8661d3b4",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527783",
+ "status": {
+  "cmdId": "8e7d71b5-24f6-4fa4-89cb-2a0f4cdd9ec5",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527785",
+ "buildStep": {
+  "cmdId": "83400ca2-405a-4483-8ead-313e00e10723",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "rtdgen",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/nvme0n1/gaoruihao/Project/chisel-vitis-template"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527785",
+ "status": {
+  "cmdId": "83400ca2-405a-4483-8ead-313e00e10723",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527787",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/chisel_vecadd_xml.rtd",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "XCLBIN_INFO",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527788",
+ "buildStep": {
+  "cmdId": "47f8ef3c-adab-4683-a5c3-cdbe53ec0d9c",
+  "name": "cf2sw",
+  "logFile": "",
+  "commandLine": "cf2sw -a /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/address_map.xml -sdsl /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/sdsl.dat -xclbin /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/xclbin_orig.xml -rtd /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/chisel_vecadd.rtd -o /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/chisel_vecadd.xml",
+  "args": [
+   "-a",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/address_map.xml",
+   "-sdsl",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/sdsl.dat",
+   "-xclbin",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/xclbin_orig.xml",
+   "-rtd",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/chisel_vecadd.rtd",
+   "-o",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/chisel_vecadd.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/nvme0n1/gaoruihao/Project/chisel-vitis-template"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 23:05:27 2022",
+ "timestampMillis": "1644073527789",
+ "status": {
+  "cmdId": "47f8ef3c-adab-4683-a5c3-cdbe53ec0d9c",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 23:05:31 2022",
+ "timestampMillis": "1644073531573",
+ "status": {
+  "cmdId": "47f8ef3c-adab-4683-a5c3-cdbe53ec0d9c",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Feb  5 23:05:31 2022",
+ "timestampMillis": "1644073531573",
+ "buildStep": {
+  "cmdId": "74c06d27-608c-4640-a273-4adf5950ef9d",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "writeSystemDiagram",
+  "args": [
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/chisel_vecadd.rtd",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/systemDiagramModelSlrBaseAddress.json"
+  ],
+  "iniFiles": [],
+  "cwd": "/nvme0n1/gaoruihao/Project/chisel-vitis-template"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 23:05:31 2022",
+ "timestampMillis": "1644073531574",
+ "status": {
+  "cmdId": "74c06d27-608c-4640-a273-4adf5950ef9d",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:31 2022",
+ "timestampMillis": "1644073531576",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/systemDiagramModelSlrBaseAddress.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM_PLUS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 23:05:31 2022",
+ "timestampMillis": "1644073531577",
+ "status": {
+  "cmdId": "74c06d27-608c-4640-a273-4adf5950ef9d",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 23:05:31 2022",
+ "timestampMillis": "1644073531577",
+ "status": {
+  "cmdId": "83400ca2-405a-4483-8ead-313e00e10723",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Feb  5 23:05:31 2022",
+ "timestampMillis": "1644073531579",
+ "buildStep": {
+  "cmdId": "f986581d-2f9c-4dc6-955e-d36fb3e689f9",
+  "name": "xclbinutil",
+  "logFile": "",
+  "commandLine": "xclbinutil --add-section DEBUG_IP_LAYOUT:JSON:/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/debug_ip_layout.rtd --add-section BITSTREAM:RAW:/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/partial.bit --force --target hw --key-value SYS:dfx_enable:true --add-section :JSON:/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/chisel_vecadd.rtd --append-section :JSON:/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/appendSection.rtd --add-section CLOCK_FREQ_TOPOLOGY:JSON:/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/chisel_vecadd_xml.rtd --add-section BUILD_METADATA:JSON:/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/chisel_vecadd_build.rtd --add-section EMBEDDED_METADATA:RAW:/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/chisel_vecadd.xml --add-section SYSTEM_METADATA:RAW:/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/systemDiagramModelSlrBaseAddress.json --output /nvme0n1/gaoruihao/Project/chisel-vitis-template/./xo_kernel/chisel_vecadd.xclbin",
+  "args": [
+   "--add-section",
+   "DEBUG_IP_LAYOUT:JSON:/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/debug_ip_layout.rtd",
+   "--add-section",
+   "BITSTREAM:RAW:/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/partial.bit",
+   "--force",
+   "--target",
+   "hw",
+   "--key-value",
+   "SYS:dfx_enable:true",
+   "--add-section",
+   ":JSON:/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/chisel_vecadd.rtd",
+   "--append-section",
+   ":JSON:/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/appendSection.rtd",
+   "--add-section",
+   "CLOCK_FREQ_TOPOLOGY:JSON:/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/chisel_vecadd_xml.rtd",
+   "--add-section",
+   "BUILD_METADATA:JSON:/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/chisel_vecadd_build.rtd",
+   "--add-section",
+   "EMBEDDED_METADATA:RAW:/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/chisel_vecadd.xml",
+   "--add-section",
+   "SYSTEM_METADATA:RAW:/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/systemDiagramModelSlrBaseAddress.json",
+   "--output",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/./xo_kernel/chisel_vecadd.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/nvme0n1/gaoruihao/Project/chisel-vitis-template"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 23:05:31 2022",
+ "timestampMillis": "1644073531579",
+ "status": {
+  "cmdId": "f986581d-2f9c-4dc6-955e-d36fb3e689f9",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 23:05:33 2022",
+ "timestampMillis": "1644073533021",
+ "status": {
+  "cmdId": "f986581d-2f9c-4dc6-955e-d36fb3e689f9",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Feb  5 23:05:33 2022",
+ "timestampMillis": "1644073533023",
+ "buildStep": {
+  "cmdId": "41b54642-88e0-4f1d-b90b-81d9a958bcbd",
+  "name": "xclbinutilinfo",
+  "logFile": "",
+  "commandLine": "xclbinutil --quiet --force --info /nvme0n1/gaoruihao/Project/chisel-vitis-template/./xo_kernel/chisel_vecadd.xclbin.info --input /nvme0n1/gaoruihao/Project/chisel-vitis-template/./xo_kernel/chisel_vecadd.xclbin",
+  "args": [
+   "--quiet",
+   "--force",
+   "--info",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/./xo_kernel/chisel_vecadd.xclbin.info",
+   "--input",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/./xo_kernel/chisel_vecadd.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/nvme0n1/gaoruihao/Project/chisel-vitis-template"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 23:05:33 2022",
+ "timestampMillis": "1644073533023",
+ "status": {
+  "cmdId": "41b54642-88e0-4f1d-b90b-81d9a958bcbd",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 23:05:34 2022",
+ "timestampMillis": "1644073534776",
+ "status": {
+  "cmdId": "41b54642-88e0-4f1d-b90b-81d9a958bcbd",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Feb  5 23:05:34 2022",
+ "timestampMillis": "1644073534778",
+ "buildStep": {
+  "cmdId": "74b1cc2b-e020-4140-8957-b826922b6309",
+  "name": "generate_sc_driver",
+  "logFile": "",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/nvme0n1/gaoruihao/Project/chisel-vitis-template"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 23:05:34 2022",
+ "timestampMillis": "1644073534778",
+ "status": {
+  "cmdId": "74b1cc2b-e020-4140-8957-b826922b6309",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 23:05:34 2022",
+ "timestampMillis": "1644073534779",
+ "status": {
+  "cmdId": "74b1cc2b-e020-4140-8957-b826922b6309",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:34 2022",
+ "timestampMillis": "1644073534781",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/report/link/system_estimate_chisel_vecadd.xtxt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SYSTEM_ESTIMATE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:35 2022",
+ "timestampMillis": "1644073535043",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/report/link/v++_link_chisel_vecadd_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:35 2022",
+ "timestampMillis": "1644073535044",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/v++_link_chisel_vecadd_guidance.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Feb  5 23:05:35 2022",
+ "timestampMillis": "1644073535046",
+ "report": {
+  "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/log/optraceViewer.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "OPERATION_TRACE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Feb  5 23:05:35 2022",
+ "timestampMillis": "1644073535047",
+ "status": {
+  "cmdId": "2b41af03-5502-40e6-9c67-099f2669ef8b",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
