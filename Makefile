@@ -42,7 +42,7 @@ LINK_CFG = $(XO).cfg
 
 
 xclbin: $(KERNEL_XO) $(LINK_CFG)
-	$(VPP) -t hw --platform $(VITIS_PLATFORM)\
+	$(VPP) -t hw \
 	--temp_dir $(XCLBIN_TEMP_DIR) --log_dir $(XCLBIN_LOG_DIR) --report_dir $(XCLBIN_REPORT_DIR) \
 	--link $(KERNEL_XO) \
 	--config $(LINK_CFG) -o $(XO).xclbin
