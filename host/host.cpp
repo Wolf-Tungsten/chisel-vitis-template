@@ -3,6 +3,11 @@
 #include <iostream>
 #include <assert.h>
 
+void wait_for_enter(const std::string &msg) {
+    std::cout << msg << std::endl;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
+
 int main(int argc, char **args)
 {
     std::cout << args[1] << std::endl;
@@ -21,6 +26,8 @@ int main(int argc, char **args)
 
     // instantiate kernel
     auto krnl = xrt::kernel(device, xclbin_uuid, "chisel_vecadd");
+
+    // wait_for_enter("setup ila and [Enter] to continue...");
 
     // allocate buffer
     size_t data_num = 4096;
