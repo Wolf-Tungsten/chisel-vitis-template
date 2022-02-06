@@ -37,15 +37,19 @@ XCLBIN_LOG_DIR = $(XCLBIN_BUILD_DIR)/log
 XCLBIN_REPORT_DIR = $(XCLBIN_BUILD_DIR)/report
 
 VPP = v++
-KERNEL_XO = $(XO).xo
-LINK_CFG = $(XO).cfg
+KERNEL_XO = ./xo_kernel/$(XO).xo
+LINK_CFG = ./xo_kernel/$(XO).cfg
+
 
 
 xclbin: $(KERNEL_XO) $(LINK_CFG)
+	mkdir -p $(XCLBIN_TEMP_DIR)
+	mkdir -p $(XCLBIN_LOG_DIR)
+	mkdir -p $(XCLBIN_REPORT_DIR)
 	$(VPP) -t hw \
 	--temp_dir $(XCLBIN_TEMP_DIR) --save-temps --log_dir $(XCLBIN_LOG_DIR) --report_dir $(XCLBIN_REPORT_DIR) \
 	--link $(KERNEL_XO) \
-	--config $(LINK_CFG) -o $(XO).xclbin
+	--config $(LINK_CFG) -o ./xo_kernel/$(XO).xclbin
 
 
 clean_vpp :
@@ -63,7 +67,7 @@ HOST_BUILD_DIR = ./build/host
 HOST_SRC = ./host/*.cpp
 HOST_INCLUDE = ./host/include
 
-HOST_EXECUTEABLE = $(HOST_BUILD_DIR)/host_executeable
+HOST_EXECUTABLE = $(HOST_BUILD_DIR)/host_executable
 
 CXX := g++
 CXXFLAGS += -g -std=c++17 -Wall
@@ -71,11 +75,10 @@ LDFLAGS += -I$(HOST_INCLUDE) -I$(XILINX_XRT)/include -L$(XILINX_XRT)/lib -lxrt_c
 
 host: $(HOST_SRC)
 	mkdir -p $(HOST_BUILD_DIR)
-	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(HOST_SRC) -o $(HOST_EXECUTEABLE)
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(HOST_SRC) -o $(HOST_EXECUTABLE)
 
-run: host $(HOST_EXECUTEABLE)
-	$(HOST_EXECUTEABLE) $(XCLBIN)
-
+run: host $(HOST_EXECUTABLE)
+	$(HOST_EXECUTABLE) ./xo_kernel/$(XCLBIN).xclbin
 
 DEV_XVC_PUB := /dev/xvc_pub.u0
 hw_debug:

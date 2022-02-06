@@ -5,11 +5,14 @@ import chisel3.util._
 import vitisrtlkernel.mmstream._
 
 class VecAdd extends Module {
+  
+  // kernel 的 IO是固定的，不要增加其他 port
   val io = IO(new Bundle {
     val dataIF = (new VitisRTLKernelDataIF)
     val done   = Output(Bool())
   })
 
+  // 在 reset 直接开始执行，执行结束后将 done 置位即可
   val readReqIssued_reg  = RegInit(false.B)
   val writeReqIssued_reg = RegInit(false.B)
 

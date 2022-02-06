@@ -27,7 +27,7 @@ int main(int argc, char **args)
     // instantiate kernel
     auto krnl = xrt::kernel(device, xclbin_uuid, "chisel_vecadd");
 
-    // wait_for_enter("setup ila and [Enter] to continue...");
+    wait_for_enter("setup ila and [Enter] to continue...");
 
     // allocate buffer
     size_t data_num = 4096;

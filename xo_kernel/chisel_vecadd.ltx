@@ -35,11 +35,11 @@
                     },
                     {
                         "type": "ILA_V3",
-                        "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/ila_0_0",
+                        "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/ila_0_0",
                         "spec": "labtools_ila_v6",
                         "ipName": "ila",
                         "reconfigTop": "pfm_top_i/dynamic_region",
-                        "uuid": "F14E0C876DE659C28820C210F382BB3F",
+                        "uuid": "9D95F33C012B51E099F2485D86101484",
                         "pins": [
                             {
                                 "name": "probe0",
@@ -52,9 +52,8 @@
                                 "portIndex": 0,
                                 "nets": [
                                     {
-                                        "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/ap_start",
-                                        "isBus": false,
-                                        "parentNetId": 0
+                                        "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/ap_start",
+                                        "isBus": false
                                     }
                                 ]
                             },
@@ -69,7 +68,7 @@
                                 "portIndex": 1,
                                 "nets": [
                                     {
-                                        "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/ap_done",
+                                        "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/ap_done",
                                         "isBus": false
                                     }
                                 ]
@@ -79,31 +78,655 @@
                                 "id": 2,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
-                                "isVector": false,
+                                "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 0,
+                                "rightIndex": 2,
                                 "portIndex": 2,
                                 "nets": [
                                     {
-                                        "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/ap_idle",
-                                        "isBus": false,
-                                        "parentNetId": 2
+                                        "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/state_r",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/state_r[2]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/state_r[1]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/state_r[0]"
+                                            }
+                                        ]
                                     }
                                 ]
                             },
                             {
                                 "name": "probe3",
                                 "id": 3,
-                                "type": "DATA_TRIGGER",
+                                "type": "DATA",
                                 "direction": "IN",
-                                "isVector": false,
+                                "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 0,
+                                "rightIndex": 63,
                                 "portIndex": 3,
                                 "nets": [
                                     {
-                                        "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/ap_ready",
-                                        "isBus": false
+                                        "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[63]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[62]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[61]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[60]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[59]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[58]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[57]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[56]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[55]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[54]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[53]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[52]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[51]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[50]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[49]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[48]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[47]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[46]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[45]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[44]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[43]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[42]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[41]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[40]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[39]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[38]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[37]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[36]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[35]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[34]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[33]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[32]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[31]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[30]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[29]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[28]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[27]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[26]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[25]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[24]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[23]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[22]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[21]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[20]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[19]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[18]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[17]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[16]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[15]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[14]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[13]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[12]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[11]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[10]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[9]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[8]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[7]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[6]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[5]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[4]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[3]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[2]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[1]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/exampleDesign_io_dataIF_readLength[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe4",
+                                "id": 4,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 63,
+                                "portIndex": 4,
+                                "nets": [
+                                    {
+                                        "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[63]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[62]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[61]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[60]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[59]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[58]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[57]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[56]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[55]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[54]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[53]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[52]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[51]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[50]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[49]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[48]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[47]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[46]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[45]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[44]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[43]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[42]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[41]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[40]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[39]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[38]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[37]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[36]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[35]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[34]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[33]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[32]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[31]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[30]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[29]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[28]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[27]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[26]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[25]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[24]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[23]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[22]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[21]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[20]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[19]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[18]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[17]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[16]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[15]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[14]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[13]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[12]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[11]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[10]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[9]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[8]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[7]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[6]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[5]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[4]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[3]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[2]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[1]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_readAddress[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe5",
+                                "id": 5,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 63,
+                                "portIndex": 5,
+                                "nets": [
+                                    {
+                                        "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[63]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[62]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[61]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[60]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[59]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[58]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[57]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[56]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[55]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[54]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[53]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[52]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[51]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[50]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[49]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[48]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[47]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[46]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[45]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[44]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[43]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[42]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[41]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[40]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[39]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[38]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[37]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[36]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[35]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[34]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[33]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[32]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[31]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[30]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[29]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[28]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[27]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[26]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[25]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[24]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[23]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[22]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[21]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[20]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[19]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[18]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[17]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[16]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[15]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[14]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[13]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[12]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[11]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[10]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[9]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[8]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[7]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[6]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[5]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[4]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[3]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[2]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[1]"
+                                            },
+                                            {
+                                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/dataIF_writeAddress[0]"
+                                            }
+                                        ]
                                     }
                                 ]
                             }
@@ -119,7 +742,7 @@
                         "pins": [
                             {
                                 "name": "probe0",
-                                "id": 4,
+                                "id": 6,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -158,7 +781,7 @@
                             },
                             {
                                 "name": "probe1",
-                                "id": 5,
+                                "id": 7,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -368,7 +991,7 @@
                             },
                             {
                                 "name": "probe2",
-                                "id": 6,
+                                "id": 8,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -410,7 +1033,7 @@
                             },
                             {
                                 "name": "probe3",
-                                "id": 7,
+                                "id": 9,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -437,7 +1060,7 @@
                             },
                             {
                                 "name": "probe4",
-                                "id": 8,
+                                "id": 10,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -476,7 +1099,7 @@
                             },
                             {
                                 "name": "probe5",
-                                "id": 9,
+                                "id": 11,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -686,7 +1309,7 @@
                             },
                             {
                                 "name": "probe6",
-                                "id": 10,
+                                "id": 12,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -728,7 +1351,7 @@
                             },
                             {
                                 "name": "probe7",
-                                "id": 11,
+                                "id": 13,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -755,7 +1378,7 @@
                             },
                             {
                                 "name": "probe8",
-                                "id": 12,
+                                "id": 14,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -794,7 +1417,7 @@
                             },
                             {
                                 "name": "probe9",
-                                "id": 13,
+                                "id": 15,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -833,7 +1456,7 @@
                             },
                             {
                                 "name": "probe10",
-                                "id": 14,
+                                "id": 16,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -2387,7 +3010,7 @@
                             },
                             {
                                 "name": "probe11",
-                                "id": 15,
+                                "id": 17,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -3941,7 +4564,7 @@
                             },
                             {
                                 "name": "probe12",
-                                "id": 16,
+                                "id": 18,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -4151,7 +4774,7 @@
                             },
                             {
                                 "name": "probe13",
-                                "id": 17,
+                                "id": 19,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -4175,7 +4798,7 @@
                             },
                             {
                                 "name": "probe14",
-                                "id": 18,
+                                "id": 20,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -4202,7 +4825,7 @@
                             },
                             {
                                 "name": "probe15",
-                                "id": 19,
+                                "id": 21,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -4226,7 +4849,7 @@
                             },
                             {
                                 "name": "probe16",
-                                "id": 20,
+                                "id": 22,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -4250,7 +4873,7 @@
                             },
                             {
                                 "name": "probe17",
-                                "id": 21,
+                                "id": 23,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -4277,7 +4900,7 @@
                             },
                             {
                                 "name": "probe18",
-                                "id": 22,
+                                "id": 24,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": false,
@@ -4293,7 +4916,7 @@
                             },
                             {
                                 "name": "probe19",
-                                "id": 23,
+                                "id": 25,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -4332,7 +4955,7 @@
                             },
                             {
                                 "name": "probe20",
-                                "id": 24,
+                                "id": 26,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -4386,7 +5009,7 @@
                             },
                             {
                                 "name": "probe21",
-                                "id": 25,
+                                "id": 27,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -4413,7 +5036,7 @@
                             },
                             {
                                 "name": "probe22",
-                                "id": 26,
+                                "id": 28,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -4452,7 +5075,7 @@
                             },
                             {
                                 "name": "probe23",
-                                "id": 27,
+                                "id": 29,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -4506,7 +5129,7 @@
                             },
                             {
                                 "name": "probe24",
-                                "id": 28,
+                                "id": 30,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -4533,7 +5156,7 @@
                             },
                             {
                                 "name": "probe25",
-                                "id": 29,
+                                "id": 31,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -4572,7 +5195,7 @@
                             },
                             {
                                 "name": "probe26",
-                                "id": 30,
+                                "id": 32,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -4596,7 +5219,7 @@
                             },
                             {
                                 "name": "probe27",
-                                "id": 31,
+                                "id": 33,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -4635,7 +5258,7 @@
                             },
                             {
                                 "name": "probe28",
-                                "id": 32,
+                                "id": 34,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -4749,7 +5372,7 @@
                             },
                             {
                                 "name": "probe29",
-                                "id": 33,
+                                "id": 35,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -4773,7 +5396,7 @@
                             },
                             {
                                 "name": "probe30",
-                                "id": 34,
+                                "id": 36,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -4887,7 +5510,7 @@
                             },
                             {
                                 "name": "probe31",
-                                "id": 35,
+                                "id": 37,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -4917,7 +5540,7 @@
                             },
                             {
                                 "name": "probe32",
-                                "id": 36,
+                                "id": 38,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -4931,7 +5554,7 @@
                                         "subnets": [
                                             {
                                                 "name": "pfm_top_i/dynamic_region/system_ila_0/inst/net_slot_1_axi_aw_ctrl[1]",
-                                                "parentNetId": 1302
+                                                "parentNetId": 1496
                                             },
                                             {
                                                 "name": "pfm_top_i/dynamic_region/system_ila_0/inst/net_slot_1_axi_aw_ctrl[0]"
@@ -4942,7 +5565,7 @@
                             },
                             {
                                 "name": "probe33",
-                                "id": 37,
+                                "id": 39,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -4956,7 +5579,7 @@
                                         "subnets": [
                                             {
                                                 "name": "pfm_top_i/dynamic_region/system_ila_0/inst/net_slot_1_axi_w_ctrl[1]",
-                                                "parentNetId": 1304
+                                                "parentNetId": 1498
                                             },
                                             {
                                                 "name": "pfm_top_i/dynamic_region/system_ila_0/inst/net_slot_1_axi_w_ctrl[0]"
@@ -4967,7 +5590,7 @@
                             },
                             {
                                 "name": "probe34",
-                                "id": 38,
+                                "id": 40,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -4984,7 +5607,7 @@
                                             },
                                             {
                                                 "name": "pfm_top_i/dynamic_region/system_ila_0/inst/net_slot_1_axi_b_ctrl[0]",
-                                                "parentNetId": 1307
+                                                "parentNetId": 1501
                                             }
                                         ]
                                     }
@@ -4992,7 +5615,7 @@
                             },
                             {
                                 "name": "probe35",
-                                "id": 39,
+                                "id": 41,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -5006,7 +5629,7 @@
                                         "subnets": [
                                             {
                                                 "name": "pfm_top_i/dynamic_region/system_ila_0/inst/net_slot_1_axi_ar_ctrl[1]",
-                                                "parentNetId": 1308
+                                                "parentNetId": 1502
                                             },
                                             {
                                                 "name": "pfm_top_i/dynamic_region/system_ila_0/inst/net_slot_1_axi_ar_ctrl[0]"
@@ -5017,7 +5640,7 @@
                             },
                             {
                                 "name": "probe36",
-                                "id": 40,
+                                "id": 42,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -5034,7 +5657,7 @@
                                             },
                                             {
                                                 "name": "pfm_top_i/dynamic_region/system_ila_0/inst/net_slot_1_axi_r_ctrl[0]",
-                                                "parentNetId": 1311
+                                                "parentNetId": 1505
                                             }
                                         ]
                                     }
@@ -5042,7 +5665,7 @@
                             },
                             {
                                 "name": "probe37",
-                                "id": 41,
+                                "id": 43,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": false,
@@ -5067,7 +5690,7 @@
                                     {
                                         "logical_port": "ARADDR",
                                         "physical_pin": {
-                                            "id": 5,
+                                            "id": 7,
                                             "name": "probe1",
                                             "leftBit": 0,
                                             "width": 64
@@ -5076,7 +5699,7 @@
                                     {
                                         "logical_port": "ARLEN",
                                         "physical_pin": {
-                                            "id": 6,
+                                            "id": 8,
                                             "name": "probe2",
                                             "leftBit": 0,
                                             "width": 8
@@ -5085,7 +5708,7 @@
                                     {
                                         "logical_port": "ARREADY",
                                         "physical_pin": {
-                                            "id": 20,
+                                            "id": 22,
                                             "name": "probe16",
                                             "leftBit": 1,
                                             "width": 1
@@ -5094,7 +5717,7 @@
                                     {
                                         "logical_port": "ARSIZE",
                                         "physical_pin": {
-                                            "id": 7,
+                                            "id": 9,
                                             "name": "probe3",
                                             "leftBit": 0,
                                             "width": 3
@@ -5103,7 +5726,7 @@
                                     {
                                         "logical_port": "ARVALID",
                                         "physical_pin": {
-                                            "id": 20,
+                                            "id": 22,
                                             "name": "probe16",
                                             "leftBit": 0,
                                             "width": 1
@@ -5112,7 +5735,7 @@
                                     {
                                         "logical_port": "AWADDR",
                                         "physical_pin": {
-                                            "id": 9,
+                                            "id": 11,
                                             "name": "probe5",
                                             "leftBit": 0,
                                             "width": 64
@@ -5121,7 +5744,7 @@
                                     {
                                         "logical_port": "AWLEN",
                                         "physical_pin": {
-                                            "id": 10,
+                                            "id": 12,
                                             "name": "probe6",
                                             "leftBit": 0,
                                             "width": 8
@@ -5130,7 +5753,7 @@
                                     {
                                         "logical_port": "AWREADY",
                                         "physical_pin": {
-                                            "id": 17,
+                                            "id": 19,
                                             "name": "probe13",
                                             "leftBit": 1,
                                             "width": 1
@@ -5139,7 +5762,7 @@
                                     {
                                         "logical_port": "AWSIZE",
                                         "physical_pin": {
-                                            "id": 11,
+                                            "id": 13,
                                             "name": "probe7",
                                             "leftBit": 0,
                                             "width": 3
@@ -5148,7 +5771,7 @@
                                     {
                                         "logical_port": "AWVALID",
                                         "physical_pin": {
-                                            "id": 17,
+                                            "id": 19,
                                             "name": "probe13",
                                             "leftBit": 0,
                                             "width": 1
@@ -5157,7 +5780,7 @@
                                     {
                                         "logical_port": "BREADY",
                                         "physical_pin": {
-                                            "id": 19,
+                                            "id": 21,
                                             "name": "probe15",
                                             "leftBit": 1,
                                             "width": 1
@@ -5166,7 +5789,7 @@
                                     {
                                         "logical_port": "BVALID",
                                         "physical_pin": {
-                                            "id": 19,
+                                            "id": 21,
                                             "name": "probe15",
                                             "leftBit": 0,
                                             "width": 1
@@ -5175,7 +5798,7 @@
                                     {
                                         "logical_port": "RDATA",
                                         "physical_pin": {
-                                            "id": 14,
+                                            "id": 16,
                                             "name": "probe10",
                                             "leftBit": 0,
                                             "width": 512
@@ -5184,7 +5807,7 @@
                                     {
                                         "logical_port": "RLAST",
                                         "physical_pin": {
-                                            "id": 21,
+                                            "id": 23,
                                             "name": "probe17",
                                             "leftBit": 2,
                                             "width": 1
@@ -5193,7 +5816,7 @@
                                     {
                                         "logical_port": "RREADY",
                                         "physical_pin": {
-                                            "id": 21,
+                                            "id": 23,
                                             "name": "probe17",
                                             "leftBit": 1,
                                             "width": 1
@@ -5202,7 +5825,7 @@
                                     {
                                         "logical_port": "RVALID",
                                         "physical_pin": {
-                                            "id": 21,
+                                            "id": 23,
                                             "name": "probe17",
                                             "leftBit": 0,
                                             "width": 1
@@ -5211,7 +5834,7 @@
                                     {
                                         "logical_port": "WDATA",
                                         "physical_pin": {
-                                            "id": 15,
+                                            "id": 17,
                                             "name": "probe11",
                                             "leftBit": 0,
                                             "width": 512
@@ -5220,7 +5843,7 @@
                                     {
                                         "logical_port": "WLAST",
                                         "physical_pin": {
-                                            "id": 18,
+                                            "id": 20,
                                             "name": "probe14",
                                             "leftBit": 2,
                                             "width": 1
@@ -5229,7 +5852,7 @@
                                     {
                                         "logical_port": "WREADY",
                                         "physical_pin": {
-                                            "id": 18,
+                                            "id": 20,
                                             "name": "probe14",
                                             "leftBit": 1,
                                             "width": 1
@@ -5238,7 +5861,7 @@
                                     {
                                         "logical_port": "WSTRB",
                                         "physical_pin": {
-                                            "id": 16,
+                                            "id": 18,
                                             "name": "probe12",
                                             "leftBit": 0,
                                             "width": 64
@@ -5247,7 +5870,7 @@
                                     {
                                         "logical_port": "WVALID",
                                         "physical_pin": {
-                                            "id": 18,
+                                            "id": 20,
                                             "name": "probe14",
                                             "leftBit": 0,
                                             "width": 1
@@ -5264,7 +5887,7 @@
                                     {
                                         "logical_port": "ARADDR",
                                         "physical_pin": {
-                                            "id": 24,
+                                            "id": 26,
                                             "name": "probe20",
                                             "leftBit": 0,
                                             "width": 12
@@ -5273,7 +5896,7 @@
                                     {
                                         "logical_port": "ARPROT",
                                         "physical_pin": {
-                                            "id": 25,
+                                            "id": 27,
                                             "name": "probe21",
                                             "leftBit": 0,
                                             "width": 3
@@ -5282,7 +5905,7 @@
                                     {
                                         "logical_port": "ARREADY",
                                         "physical_pin": {
-                                            "id": 39,
+                                            "id": 41,
                                             "name": "probe35",
                                             "leftBit": 1,
                                             "width": 1
@@ -5291,7 +5914,7 @@
                                     {
                                         "logical_port": "ARVALID",
                                         "physical_pin": {
-                                            "id": 39,
+                                            "id": 41,
                                             "name": "probe35",
                                             "leftBit": 0,
                                             "width": 1
@@ -5300,7 +5923,7 @@
                                     {
                                         "logical_port": "AWADDR",
                                         "physical_pin": {
-                                            "id": 27,
+                                            "id": 29,
                                             "name": "probe23",
                                             "leftBit": 0,
                                             "width": 12
@@ -5309,7 +5932,7 @@
                                     {
                                         "logical_port": "AWPROT",
                                         "physical_pin": {
-                                            "id": 28,
+                                            "id": 30,
                                             "name": "probe24",
                                             "leftBit": 0,
                                             "width": 3
@@ -5318,7 +5941,7 @@
                                     {
                                         "logical_port": "AWREADY",
                                         "physical_pin": {
-                                            "id": 36,
+                                            "id": 38,
                                             "name": "probe32",
                                             "leftBit": 1,
                                             "width": 1
@@ -5327,7 +5950,7 @@
                                     {
                                         "logical_port": "AWVALID",
                                         "physical_pin": {
-                                            "id": 36,
+                                            "id": 38,
                                             "name": "probe32",
                                             "leftBit": 0,
                                             "width": 1
@@ -5336,7 +5959,7 @@
                                     {
                                         "logical_port": "BREADY",
                                         "physical_pin": {
-                                            "id": 38,
+                                            "id": 40,
                                             "name": "probe34",
                                             "leftBit": 1,
                                             "width": 1
@@ -5345,7 +5968,7 @@
                                     {
                                         "logical_port": "BRESP",
                                         "physical_pin": {
-                                            "id": 30,
+                                            "id": 32,
                                             "name": "probe26",
                                             "leftBit": 0,
                                             "width": 2
@@ -5354,7 +5977,7 @@
                                     {
                                         "logical_port": "BVALID",
                                         "physical_pin": {
-                                            "id": 38,
+                                            "id": 40,
                                             "name": "probe34",
                                             "leftBit": 0,
                                             "width": 1
@@ -5363,7 +5986,7 @@
                                     {
                                         "logical_port": "RDATA",
                                         "physical_pin": {
-                                            "id": 32,
+                                            "id": 34,
                                             "name": "probe28",
                                             "leftBit": 0,
                                             "width": 32
@@ -5372,7 +5995,7 @@
                                     {
                                         "logical_port": "RREADY",
                                         "physical_pin": {
-                                            "id": 40,
+                                            "id": 42,
                                             "name": "probe36",
                                             "leftBit": 1,
                                             "width": 1
@@ -5381,7 +6004,7 @@
                                     {
                                         "logical_port": "RRESP",
                                         "physical_pin": {
-                                            "id": 33,
+                                            "id": 35,
                                             "name": "probe29",
                                             "leftBit": 0,
                                             "width": 2
@@ -5390,7 +6013,7 @@
                                     {
                                         "logical_port": "RVALID",
                                         "physical_pin": {
-                                            "id": 40,
+                                            "id": 42,
                                             "name": "probe36",
                                             "leftBit": 0,
                                             "width": 1
@@ -5399,7 +6022,7 @@
                                     {
                                         "logical_port": "WDATA",
                                         "physical_pin": {
-                                            "id": 34,
+                                            "id": 36,
                                             "name": "probe30",
                                             "leftBit": 0,
                                             "width": 32
@@ -5408,7 +6031,7 @@
                                     {
                                         "logical_port": "WREADY",
                                         "physical_pin": {
-                                            "id": 37,
+                                            "id": 39,
                                             "name": "probe33",
                                             "leftBit": 1,
                                             "width": 1
@@ -5417,7 +6040,7 @@
                                     {
                                         "logical_port": "WSTRB",
                                         "physical_pin": {
-                                            "id": 35,
+                                            "id": 37,
                                             "name": "probe31",
                                             "leftBit": 0,
                                             "width": 4
@@ -5426,7 +6049,7 @@
                                     {
                                         "logical_port": "WVALID",
                                         "physical_pin": {
-                                            "id": 37,
+                                            "id": 39,
                                             "name": "probe33",
                                             "leftBit": 0,
                                             "width": 1
@@ -5439,70 +6062,8 @@
                 ],
                 "parent_nets": [
                     {
-                        "id": 0,
-                        "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/inst_control_s_axi/ap_start",
-                        "state_reg": [
-                            {
-                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/FSM_sequential_state_r_reg[0]",
-                                "states": [
-                                    {
-                                        "name": "iSTATE",
-                                        "val": "010"
-                                    },
-                                    {
-                                        "name": "iSTATE0",
-                                        "val": "000"
-                                    },
-                                    {
-                                        "name": "iSTATE1",
-                                        "val": "100"
-                                    },
-                                    {
-                                        "name": "iSTATE2",
-                                        "val": "011"
-                                    },
-                                    {
-                                        "name": "iSTATE3",
-                                        "val": "001"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "id": 2,
-                        "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/ap_idle",
-                        "state_reg": [
-                            {
-                                "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/example/FSM_sequential_state_r_reg[2]",
-                                "states": [
-                                    {
-                                        "name": "iSTATE",
-                                        "val": "010"
-                                    },
-                                    {
-                                        "name": "iSTATE0",
-                                        "val": "000"
-                                    },
-                                    {
-                                        "name": "iSTATE1",
-                                        "val": "100"
-                                    },
-                                    {
-                                        "name": "iSTATE2",
-                                        "val": "011"
-                                    },
-                                    {
-                                        "name": "iSTATE3",
-                                        "val": "001"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "id": 1302,
-                        "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/inst_control_s_axi/AWREADY",
+                        "id": 1496,
+                        "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/inst_control_s_axi/FSM_onehot_wstate_reg[1]_0",
                         "state_reg": [
                             {
                                 "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/inst_control_s_axi/FSM_onehot_wstate_reg[1]",
@@ -5528,8 +6089,8 @@
                         ]
                     },
                     {
-                        "id": 1304,
-                        "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/inst_control_s_axi/WREADY",
+                        "id": 1498,
+                        "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/inst_control_s_axi/FSM_onehot_wstate_reg[2]_0",
                         "state_reg": [
                             {
                                 "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/inst_control_s_axi/FSM_onehot_wstate_reg[2]",
@@ -5555,8 +6116,8 @@
                         ]
                     },
                     {
-                        "id": 1307,
-                        "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/inst_control_s_axi/BVALID",
+                        "id": 1501,
+                        "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/inst_control_s_axi/s_axi_control_bvalid",
                         "state_reg": [
                             {
                                 "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/inst_control_s_axi/FSM_onehot_wstate_reg[3]",
@@ -5582,8 +6143,8 @@
                         ]
                     },
                     {
-                        "id": 1308,
-                        "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/inst_control_s_axi/ARREADY",
+                        "id": 1502,
+                        "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/inst_control_s_axi/FSM_onehot_rstate_reg[1]_0",
                         "state_reg": [
                             {
                                 "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/inst_control_s_axi/FSM_onehot_rstate_reg[1]",
@@ -5605,8 +6166,8 @@
                         ]
                     },
                     {
-                        "id": 1311,
-                        "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/inst_control_s_axi/RVALID",
+                        "id": 1505,
+                        "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/inst_control_s_axi/s_axi_control_rvalid",
                         "state_reg": [
                             {
                                 "name": "pfm_top_i/dynamic_region/chisel_vecadd_0/inst/inst_control_s_axi/FSM_onehot_rstate_reg[2]",
