@@ -54,3 +54,25 @@ clean_vpp :
 	-rm -rf ./.ipcaches
 
 .PHONY: xclbin clean_vpp
+
+############################## Host Flow #############################
+
+HOST_BUILD_DIR = ./build/host
+
+HOST_SRC = ./host/*.cpp
+HOST_INCLUDE = ./host/include
+
+HOST_EXECUTEABLE = $(HOST_BUILD_DIR)/host_executeable
+
+CXX := g++
+CXXFLAGS += -g -std=c++17 -Wall
+LDFLAGS += -I$(HOST_INCLUDE) -I$(XILINX_XRT)/include -L$(XILINX_XRT)/lib -lxrt_coreutil -pthread
+
+host: $(HOST_SRC)
+	mkdir -p $(HOST_BUILD_DIR)
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(HOST_SRC) -o $(HOST_EXECUTEABLE)
+
+run_host: host $(HOST_EXECUTEABLE)
+	$(HOST_EXECUTEABLE) $(XCLBIN)
+
+.PHONY: host run_host
