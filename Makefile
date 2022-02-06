@@ -43,15 +43,17 @@ LINK_CFG = $(XO).cfg
 
 xclbin: $(KERNEL_XO) $(LINK_CFG)
 	$(VPP) -t hw \
-	--temp_dir $(XCLBIN_TEMP_DIR) --save_temps --log_dir $(XCLBIN_LOG_DIR) --report_dir $(XCLBIN_REPORT_DIR) \
+	--temp_dir $(XCLBIN_TEMP_DIR) --save-temps --log_dir $(XCLBIN_LOG_DIR) --report_dir $(XCLBIN_REPORT_DIR) \
 	--link $(KERNEL_XO) \
 	--config $(LINK_CFG) -o $(XO).xclbin
 
 xclbin_profile: $(KERNEL_XO) $(LINK_CFG)
 	$(VPP) -t hw \
-	--temp_dir $(XCLBIN_TEMP_DIR) --save_temps --log_dir $(XCLBIN_LOG_DIR) --report_dir $(XCLBIN_REPORT_DIR) \
-	--link $(KERNEL_XO) --profile.data:all:all:all --profile.stall:all\
-	--config $(LINK_CFG) -o $(XO).profile.xclbin
+	--temp_dir $(XCLBIN_TEMP_DIR) --save-temps --log_dir $(XCLBIN_LOG_DIR) --report_dir $(XCLBIN_REPORT_DIR) \
+	--link $(KERNEL_XO) \
+	--config $(LINK_CFG) \
+	--profile.data all:all:all --profile.stall all \
+	-o $(XO).profile.xclbin
 
 clean_vpp :
 	-rm -rf $(XCLBIN_TEMP_DIR)

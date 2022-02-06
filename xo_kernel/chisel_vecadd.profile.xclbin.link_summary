@@ -1,0 +1,152 @@
+<ENTRY>
+{
+ "thisFile": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/xo_kernel/chisel_vecadd.profile.xclbin.link_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Sun Feb  6 13:16:56 2022",
+ "timestampMillis": "1644124616113",
+ "buildStep": {
+  "cmdId": "3c2559c9-374a-4cce-b4a3-06f0d7bde3fc",
+  "name": "v++",
+  "logFile": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/link.steps.log",
+  "commandLine": "/nvme0n1/tools/Xilinx/Vitis/2021.1/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -t hw --temp_dir ./build/xclbin/tmp --save-temps --log_dir ./build/xclbin/log --report_dir ./build/xclbin/report --link ./xo_kernel/chisel_vecadd.xo --config ./xo_kernel/chisel_vecadd.cfg --profile.data all:all:all --profile.stall all -o ./xo_kernel/chisel_vecadd.profile.xclbin ",
+  "args": [
+   "-t",
+   "hw",
+   "--temp_dir",
+   "./build/xclbin/tmp",
+   "--save-temps",
+   "--log_dir",
+   "./build/xclbin/log",
+   "--report_dir",
+   "./build/xclbin/report",
+   "--link",
+   "./xo_kernel/chisel_vecadd.xo",
+   "--config",
+   "./xo_kernel/chisel_vecadd.cfg",
+   "--profile.data",
+   "all:all:all",
+   "--profile.stall",
+   "all",
+   "-o",
+   "./xo_kernel/chisel_vecadd.profile.xclbin"
+  ],
+  "iniFiles": [
+   {
+    "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/xo_kernel/chisel_vecadd.cfg",
+    "content": "platform=xilinx_u280_xdma_201920_3 # can be queried by 'plaforminfo -l'\n\n[connectivity]\n#nk=\u003ckernel name\u003e:\u003cnumber\u003e:\u003ccu_name\u003e.\u003ccu_name\u003e...\nnk=chisel_vecadd:1:chisel_vecadd_0\n# kernel_name、argument name 可以从 xo 文件中获取\n#sp=\u003ccompute_unit_name\u003e.\u003cargument\u003e:\u003cbank name\u003e\nsp=chisel_vecadd_0.m00_axi:HBM[0]\n# bank name 可通过 platforminfo 命令查询\n#slr=\u003ccompute_unit_name\u003e:\u003cslr_ID\u003e\n\n[debug]\nprotocol=all:all\nchipscope=chisel_vecadd_0 # cu name\n# protocol=cu2:port3\n\n# Protocol analyzers on all CUs\n# Protocol analyzer on port3 of cu2\n# ILA on cu2\n"
+   }
+  ],
+  "cwd": "/nvme0n1/gaoruihao/Project/chisel-vitis-template"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Feb  6 13:16:56 2022",
+ "timestampMillis": "1644124616114",
+ "status": {
+  "cmdId": "3c2559c9-374a-4cce-b4a3-06f0d7bde3fc",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Sun Feb  6 13:17:07 2022",
+ "timestampMillis": "1644124627828",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_u280_xdma_201920_3.xpfm",
+  "hardwareDsa": "xilinx_u280_xdma_201920_3.xsa",
+  "platformDirectory": "/opt/xilinx/platforms/xilinx_u280_xdma_201920_3",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_LINK",
+  "target": "TT_HW",
+  "binaryContainer": {
+   "base": {
+    "type": "BT_UKNOWN",
+    "name": "chisel_vecadd.profile",
+    "file": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/xo_kernel/chisel_vecadd.profile.xclbin",
+    "reports": [],
+    "uuid": ""
+   },
+   "kernels": []
+  },
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "chisel_vecadd",
+     "file": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/xo_kernel/chisel_vecadd.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [],
+    "psSources": [],
+    "cuNames": [
+     "chisel_vecadd_0"
+    ],
+    "type": "RTL",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "Vitis V++ Compiler Release 2021.1. SW Build 3246112 on 2021-06-09-14:19:56"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sun Feb  6 13:17:08 2022",
+ "timestampMillis": "1644124628206",
+ "buildStep": {
+  "cmdId": "33284331-0e6f-4cba-8eb8-53e6187d0c23",
+  "name": "system_link",
+  "logFile": "",
+  "commandLine": "system_link --xo /nvme0n1/gaoruihao/Project/chisel-vitis-template/xo_kernel/chisel_vecadd.xo -keep --config /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/syslinkConfig.ini --xpfm /opt/xilinx/platforms/xilinx_u280_xdma_201920_3/xilinx_u280_xdma_201920_3.xpfm --target hw --output_dir /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int --temp_dir /nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/sys_link",
+  "args": [
+   "--xo",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/xo_kernel/chisel_vecadd.xo",
+   "-keep",
+   "--config",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/syslinkConfig.ini",
+   "--xpfm",
+   "/opt/xilinx/platforms/xilinx_u280_xdma_201920_3/xilinx_u280_xdma_201920_3.xpfm",
+   "--target",
+   "hw",
+   "--output_dir",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int",
+   "--temp_dir",
+   "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/sys_link"
+  ],
+  "iniFiles": [
+   {
+    "path": "/nvme0n1/gaoruihao/Project/chisel-vitis-template/build/xclbin/tmp/link/int/syslinkConfig.ini",
+    "content": "nk=chisel_vecadd:1:chisel_vecadd_0\nsp=chisel_vecadd_0.m00_axi:HBM[0]\n\n"
+   }
+  ],
+  "cwd": "/nvme0n1/gaoruihao/Project/chisel-vitis-template"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Feb  6 13:17:08 2022",
+ "timestampMillis": "1644124628207",
+ "status": {
+  "cmdId": "33284331-0e6f-4cba-8eb8-53e6187d0c23",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
