@@ -47,13 +47,6 @@ xclbin: $(KERNEL_XO) $(LINK_CFG)
 	--link $(KERNEL_XO) \
 	--config $(LINK_CFG) -o $(XO).xclbin
 
-xclbin_profile: $(KERNEL_XO) $(LINK_CFG)
-	$(VPP) -t hw \
-	--temp_dir $(XCLBIN_TEMP_DIR) --save-temps --log_dir $(XCLBIN_LOG_DIR) --report_dir $(XCLBIN_REPORT_DIR) \
-	--link $(KERNEL_XO) \
-	--config $(LINK_CFG) \
-	--profile.data all:all:all --profile.stall all \
-	-o $(XO).profile.xclbin
 
 clean_vpp :
 	-rm -rf $(XCLBIN_TEMP_DIR)
@@ -61,7 +54,7 @@ clean_vpp :
 	-rm -rf $(XCLBIN_REPORT_DIR)
 	-rm -rf ./.ipcaches
 
-.PHONY: xclbin clean_vpp xclbin_profile
+.PHONY: xclbin clean_vpp 
 
 ############################## Host Flow #############################
 
@@ -80,14 +73,12 @@ host: $(HOST_SRC)
 	mkdir -p $(HOST_BUILD_DIR)
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(HOST_SRC) -o $(HOST_EXECUTEABLE)
 
-run_host: host $(HOST_EXECUTEABLE)
+run: host $(HOST_EXECUTEABLE)
 	$(HOST_EXECUTEABLE) $(XCLBIN)
 
-profile_host: host $(HOST_EXECUTEABLE)
-	$(HOST_EXECUTEABLE) $(XCLBIN)
 
 DEV_XVC_PUB := /dev/xvc_pub.u0
 hw_debug:
 	xvc_pcie -d $(DEV_XVC_PUB)
 
-.PHONY: host run_host hw_debug profile_host
+.PHONY: host run hw_debug
