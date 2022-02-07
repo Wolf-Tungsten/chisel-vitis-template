@@ -145,23 +145,27 @@
 
 * 完成后，`xo_kernel` 目录下会产生：`<XO_NAME>.xclbin` 及一系列辅助文件，可以使用 Vitis Analyzer 分析，查看时序、面积等信息。
 
-## g++：编译 host 并执行
+## Step4: 编译 Host 端程序并执行
 
-编写 host 并根据需要修改 Makefile 中 host 目标的编译方法，使用 `make host` 命令进行编译。
+`host/host.cpp` 提供了一个使用 XRT Native API 编写的 Host 端程序的完整例子，Host 端程序负责控制数据传输和Kernel执行，可参考 【UG1393】Ch6 了解 Host 端程序的开发方法。
 
-编译生成的可执行文件位于 `build/host/host_executable` 处。
+* 根据 Host 端程序构建需要修改 Makefile 中 host flow 部分；
 
-如果host编写符合 Vitis 建议的方式——在第一个参数指定 xclbin 路径，则可直接使用 `make run XCLBIN=<XCLBIN_NAME>` 命令执行。
+* 使用 XRT Native API 需要添加 `-I$(XILINX_XRT)/include -L$(XILINX_XRT)/lib -lxrt_coreutil -pthread` 编译器参数；
 
-## Vivado：调试
+* 默认编译生成的可执行文件位于 `build/host/host_executable` 处。
 
-执行 `make hw_debug` 命令启动 Xilinx Virtual Cable，之后可在 Vivado Hardware Manager 中连接。
+* 如果 Host 端程序符合 Vitis 建议的方式——在第一个参数指定 xclbin 路径，则可直接使用 `make run XCLBIN=<XCLBIN_NAME>` 命令执行，XCLBIN_NAME 和之前的 XO_NAME 对应（例如：`make run XCLBIN=chisel_vecadd`)
 
-如果连接了 USB JTAG，需要区分 XVC 设备和 JTAG 设备，只有通过 XVC 设备才能调试 kernel。
+## Hardware 调试
 
-ILA probe 需要的 ltx 文件位于 `xo_kernel` 目录中。
+* 如果在 Step3 中 `<XO_NAME>.cfg` 配置启用了调试，可通过 Vivado Hardware Manager 连接到 XVC 使用 System ILA 等调试功能。
 
-使用 ILA 时，需要在 host program 中插入停顿，参考 `host/host.cpp` 中 `wait_for_enter` 函数实现。
+* 执行 `make hw_debug` 命令启动 Xilinx Virtual Cable，之后可在 Vivado Hardware Manager 中连接。（可能需要修改 Makefile 中 DEV_XVC_PUB 变量）
+
+* ILA probe 需要的 ltx 文件位于 `xo_kernel` 目录中。
+
+* 使用 ILA 时，需要在 host program 中插入停顿，以提供设置 trigger 的机会，参考 `host/host.cpp` 中 `wait_for_enter` 函数实现。
 
 
 

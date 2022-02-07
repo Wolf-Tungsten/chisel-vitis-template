@@ -29,26 +29,26 @@ int main(int argc, char **args)
 
     wait_for_enter("setup ila and [Enter] to continue...");
 
-    // allocate buffer
+    
     size_t data_num = 4096;
     uint32_t input_data[data_num];
     uint32_t output_data[data_num];
     for(size_t i = 0; i < data_num; i++){
         input_data[i] = i % 128;
     }
-    /**
-     * The xrt::kernel::group_id() also accepts the direct memory bank index 
-     * (as observed from xbutil examine --report memory output)
-     */
+    
+    // allocate buffer on board
     auto read_buffer = xrt::bo(device, data_num * sizeof(uint32_t), krnl.group_id(1));
     auto write_buffer = xrt::bo(device, data_num * sizeof(uint32_t), krnl.group_id(2));
     
+    // 输入数据传输到 board
     read_buffer.write(input_data);
     read_buffer.sync(XCL_BO_SYNC_BO_TO_DEVICE);
 
     auto run = krnl(data_num * 4 / 64, read_buffer, write_buffer);
     run.wait();
 
+    // 计算结果从 board read 回 host
     write_buffer.sync(XCL_BO_SYNC_BO_FROM_DEVICE);
     write_buffer.read(output_data);
 
