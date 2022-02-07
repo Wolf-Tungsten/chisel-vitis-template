@@ -1,13 +1,11 @@
-# Chisel Vitis Template
+# 在 Vitis 平台上运行 Chisel 设计
 
-Build Vitis RTL Kernel with Chisel.
-
-
-## Chisel：Kernel 实例化与 Verilog 生成
+## Step1: Chisel Kernel 实例化与 Verilog 生成
 
 在 `src/main/scala/vitisrtlkernel/VitisRTLKernel.scala` 中：
-* 修改 `VitisRTLKernelDataIF`，添加需要的寄存器参数和 Memory Port；
-* 修改 `VitisRTLKernel`，实例化 kernel 模块。
+* 修改 `VitisRTLKernelDataIF`，添加需要的 Scalar 参数和 Memory Port；
+* 修改 `VitisRTLKernel`，实例化 kernel 模块（参考例子中的 VecAdd）。
+
 ⚠️ 不要修改该文件的其他部分
 
 顶层 kernel 的 io port 必须为：
@@ -18,11 +16,15 @@ Build Vitis RTL Kernel with Chisel.
   })
 ```
 
-在 reset 后，dataIF 中的所有参数都已有效，可以直接开始执行 kernel 逻辑。
+* **reset 高电平有效**，在复位，dataIF 中的所有参数都已生效，可以直接读取参数、开始执行 kernel 逻辑。
 
-kernel 逻辑结束后，使能 done 输出信号，**在 done 信号使能后、下次 reset 有效前，不要操作 memory port**。
+* kernel 逻辑运行结束后，**使能 done 输出信号**，通知 vitis 执行完成，host 端 wait 函数返回。
 
-kernel 测试无误后，执行 `make verilog`，生成的 verilog 位于 `build/chisel/VitisRTLKernel.v`。
+⚠️ **在 done 信号使能后、下次 reset 有效前，不要操作 memory port**。
+
+* test 目录下提供了简单的 AXISlaveSim 实现，可用于 VitisRTLKernel 测试，具体使用方法参考 VitisRTLKernelTest 的实现。
+
+* 生成 Verilog：kernel 测试无误后，执行 `make verilog`，生成的文件位于 `build/chisel/VitisRTLKernel.v`。
 
 ## Vitis IDE/Vivado：使用 RTL Kernel Wizard 打包 kernel 为 xo
 
