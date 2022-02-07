@@ -31,7 +31,7 @@
 
 ## Step2: 使用 RTL Kernel Wizard 打包 kernel 为 xo 格式
 
-* 启动 Vitis IDE（不是 Vitis HLS），创建一个临时的 Vitis Application 项目，**项目创建之需要正确选择 platform**，启动 RTL Kernel Wizard 创建 RTL Kernel。（不要直接通过 Vivado 启动 RTL Kernel Wizard，因为 Vivado 会出现 platform 无法选择的 bug。）
+* 启动 Vitis IDE（不是 Vitis HLS），创建一个临时的 Vitis Application 项目，**项目创建时需要正确选择 platform**，启动 RTL Kernel Wizard 创建 RTL Kernel。（不要直接通过 Vivado 启动 RTL Kernel Wizard，因为 Vivado 会出现 platform 无法选择的 bug。）
 
 * 参考 【UG1393】Ch47. RTL Kernel Wizard 配置 RTL Kernel 所需的 Scalar 参数和 Memory Port，特别注意以下参数配置：
 
