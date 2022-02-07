@@ -1,5 +1,7 @@
 # 在 Vitis 平台上运行 Chisel 设计
 
+✅ 以下流程已在 Alveo U280 平台上成功运行
+
 ## Step1: Chisel Kernel 实例化与 Verilog 生成
 
 在 `src/main/scala/vitisrtlkernel/VitisRTLKernel.scala` 中：
@@ -26,29 +28,122 @@
 
 * 生成 Verilog：kernel 测试无误后，执行 `make verilog`，生成的文件位于 `build/chisel/VitisRTLKernel.v`。
 
-## Vitis IDE/Vivado：使用 RTL Kernel Wizard 打包 kernel 为 xo
 
-创建一个临时的 Vitis 项目，选对 platform，启动 RTL Kernel Wizard 创建 RTL Kernel。
+## Step2: 使用 RTL Kernel Wizard 打包 kernel 为 xo 格式
 
-不要直接通过 Vivado 启动 RTL Kernel Wizard，因为 Vivado 会出现 platform 无法选择的 bug。
+* 启动 Vitis IDE（不是 Vitis HLS），创建一个临时的 Vitis Application 项目，**项目创建之需要正确选择 platform**，启动 RTL Kernel Wizard 创建 RTL Kernel。（不要直接通过 Vivado 启动 RTL Kernel Wizard，因为 Vivado 会出现 platform 无法选择的 bug。）
 
-修改 RTL Kernel Wizard 生成的顶层文件，实例化 `VitisRTLKernel` 并连接 port。
+* 参考 【UG1393】Ch47. RTL Kernel Wizard 配置 RTL Kernel 所需的 Scalar 参数和 Memory Port，特别注意以下参数配置：
 
-建议在此处综合一下，确保没有综合问题。
+  * General Settings - Kernel Control Interface - ap ctrl hs
 
-Generate RTL Kernel，生成 xo 文件。
+  * General Settings - Number of clocks - 1
 
-## v++：编译 XCLBIN
+  * General Settings - Has reset - 0
 
-将 Vivado 生成的 xo 文件复制到 `xo_kernel` 目录下，建议命名为 `<XO_NAME>.xo`（例如 `chisel_vecadd.xo`)。
 
-参考 `xo_kernel/chisel_vecadd.cfg` 编写 v++ link 配置，保存为 `<XO_NAME>.cfg`。
+* RTL Kernel Wizard 会创建一个 Vivado 项目并启动 Vivado：
 
-执行 `make xclbin XO=<XO_NAME>` (例子中为 `make xclbin XO=chisel_vecadd`)，开始 xclbin 打包。
+  * 添加 `build/chisel/VitisRTLKernel.v` 为设计文件；
+  * 修改 kernel 顶层文件，实例化 chisel kernel，例如：
 
-xclbin 打包时间极长，注意进程不要被杀掉。
+```verilog
+///////////////////////////////////////////////////////////////////////////////
+// Add kernel logic here.  Modify/remove example code as necessary.
+///////////////////////////////////////////////////////////////////////////////
+// 注释掉 Vivado 生成的例子
+// Example RTL block.  Remove to insert custom logic.
+//chisel_vecadd_example #(
+//  .C_M00_AXI_ADDR_WIDTH ( C_M00_AXI_ADDR_WIDTH ),
+//  .C_M00_AXI_DATA_WIDTH ( C_M00_AXI_DATA_WIDTH )
+//)
+//inst_example (
+//  .ap_clk          ( ap_clk          ),
+//  .ap_rst_n        ( 1'b1            ),
+//  .m00_axi_awvalid ( m00_axi_awvalid ),
+//  .m00_axi_awready ( m00_axi_awready ),
+//  .m00_axi_awaddr  ( m00_axi_awaddr  ),
+//  .m00_axi_awlen   ( m00_axi_awlen   ),
+//  .m00_axi_wvalid  ( m00_axi_wvalid  ),
+//  .m00_axi_wready  ( m00_axi_wready  ),
+//  .m00_axi_wdata   ( m00_axi_wdata   ),
+//  .m00_axi_wstrb   ( m00_axi_wstrb   ),
+//  .m00_axi_wlast   ( m00_axi_wlast   ),
+//  .m00_axi_bvalid  ( m00_axi_bvalid  ),
+//  .m00_axi_bready  ( m00_axi_bready  ),
+//  .m00_axi_arvalid ( m00_axi_arvalid ),
+//  .m00_axi_arready ( m00_axi_arready ),
+//  .m00_axi_araddr  ( m00_axi_araddr  ),
+//  .m00_axi_arlen   ( m00_axi_arlen   ),
+//  .m00_axi_rvalid  ( m00_axi_rvalid  ),
+//  .m00_axi_rready  ( m00_axi_rready  ),
+//  .m00_axi_rdata   ( m00_axi_rdata   ),
+//  .m00_axi_rlast   ( m00_axi_rlast   ),
+//  .ap_start        ( ap_start        ),
+//  .ap_done         ( ap_done         ),
+//  .ap_idle         ( ap_idle         ),
+//  .ap_ready        ( ap_ready        ),
+//  .readLength      ( readLength      ),
+//  .readAddress     ( readAddress     ),
+//  .writeAddress    ( writeAddress    )
+//);
 
-打包完成后，`xo_kernel` 目录下会产生：`<XO_NAME>.xclbin` 及一系列辅助文件，可以使用 Vitis Analyzer 分析。
+// 换上我们自己的
+  VitisRTLKernel example(
+    .ap_clk          ( ap_clk          ),
+    .ap_start        ( ap_start        ),
+    .ap_done         ( ap_done         ),
+    .ap_idle         ( ap_idle         ),
+    .ap_ready        ( ap_ready        ),
+    .dataIF_readLength            ( readLength      ),
+    .dataIF_readAddress           ( readAddress     ),
+    .dataIF_writeAddress          ( writeAddress    ),
+    .dataIF_m00Read_ar_ready      (m00_axi_arready),
+    .dataIF_m00Read_ar_valid      (m00_axi_arvalid),
+    .dataIF_m00Read_ar_bits_addr  (m00_axi_araddr),
+    .dataIF_m00Read_ar_bits_len   (m00_axi_arlen),
+    .dataIF_m00Read_r_ready       (m00_axi_rready),
+    .dataIF_m00Read_r_valid       (m00_axi_rvalid),
+    .dataIF_m00Read_r_bits_data   (m00_axi_rdata),
+    .dataIF_m00Read_r_bits_last   (m00_axi_rlast),
+    .dataIF_m00Write_aw_ready     (m00_axi_awready),
+    .dataIF_m00Write_aw_valid     (m00_axi_awvalid),
+    .dataIF_m00Write_aw_bits_addr (m00_axi_awaddr),
+    .dataIF_m00Write_aw_bits_len  (m00_axi_awlen),
+    .dataIF_m00Write_w_ready      (m00_axi_wready),
+    .dataIF_m00Write_w_valid      (m00_axi_wvalid),
+    .dataIF_m00Write_w_bits_data  (m00_axi_wdata),
+    .dataIF_m00Write_w_bits_strb  (m00_axi_wstrb),
+    .dataIF_m00Write_w_bits_last  (m00_axi_wlast),
+    .dataIF_m00Write_b_ready      (m00_axi_bready),
+    .dataIF_m00Write_b_valid      (m00_axi_bvalid)
+  );
+    
+```
+
+* 建议在此处运行一次综合，保证综合无误再继续向前。
+
+* 在左侧导航栏中点击 Generate RTL Kernel，生成 xo 文件。
+
+* 之后每次修改 Chisel 设计后都需要重新进行以上的打包流程。
+
+## Step3: 生成 XCLBIN
+
+在 Vitis 平台中，XCLBIN 的功能类比于 bitstream，XCLBIN 在 host 程序执行时通过 XRT API 加载到加速器板卡。
+
+生成 XCLBIN 的过程在 Vitis 平台中称为 link，具体步骤如下：
+
+* 将 RTL Kernel Wizard 生成的 xo 文件复制到项目 `xo_kernel` 目录下，假设文件名为 `<XO_NAME>.xo`（例如 `chisel_vecadd.xo`)。
+
+* 参考 `xo_kernel/chisel_vecadd.cfg` 和 【UG1393】Ch13.Build the Device Binary - Linking the Kernels，编写 v++ link 配置，保存为 `<XO_NAME>.cfg`（例如 `chisel_vecadd.cfg`)。其中一些关键字段解释：
+  * plaform 设置为运行kernel的 vitis 平台名称，可以通过 `plaforminfo -l` 命令查询
+  * `[connectivity]` 中 nk 设置 kernel 实例化的数量和名称
+  * `[connectivity]` 中 sp 设置 kernel memory port 和板卡 memory 的连接，板卡的 memory 资源信息可以通过 `platforminfo ` 查询
+  * `[debug]` 和 `[profile]` 启用调试和性能分析配置，根据需要启用，具体参考 【UG1393】Ch18, Ch19, Ch20.
+  
+* 执行 `make xclbin XO=<XO_NAME>` (例子中为 `make xclbin XO=chisel_vecadd`)，开始 xclbin 打包。(时间很久)
+
+* 完成后，`xo_kernel` 目录下会产生：`<XO_NAME>.xclbin` 及一系列辅助文件，可以使用 Vitis Analyzer 分析，查看时序、面积等信息。
 
 ## g++：编译 host 并执行
 
